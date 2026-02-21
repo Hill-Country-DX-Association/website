@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" fill="#0A0A0A" rx="16"/>
+  <rect x="0.5" y="0.5" width="199" height="199" fill="none" stroke="rgba(224,112,32,0.1)" stroke-width="1" rx="16"/>
+
+  <!--
+    14-segment layout per character (44w × 60h):
+    Horizontal: a1/a2 (top), g1/g2 (mid), d1/d2 (bot)
+    Vertical:   f/e (left), b/c (right), i/l (center)
+    Diagonal:   h/j (upper), k/m (lower)
+
+    Grid positions:
+    H = (36, 28)   C = (120, 28)
+    C = (36, 112)   Q = (120, 112)
+  -->
+
+  <!-- ===== H ===== -->
+  <g transform="translate(36,28)">
+    <!-- Ghost: all 14 segments -->
+    <g fill="rgba(224,112,32,0.07)">
+      <rect x="7" y="0" width="13" height="5" rx="1"/>
+      <rect x="24" y="0" width="13" height="5" rx="1"/>
+      <rect x="0" y="7" width="5" height="19" rx="1"/>
+      <rect x="39" y="7" width="5" height="19" rx="1"/>
+      <rect x="19.5" y="7" width="5" height="19" rx="1"/>
+      <rect x="7" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="24" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="0" y="34" width="5" height="19" rx="1"/>
+      <rect x="39" y="34" width="5" height="19" rx="1"/>
+      <rect x="19.5" y="34" width="5" height="19" rx="1"/>
+      <rect x="7" y="55" width="13" height="5" rx="1"/>
+      <rect x="24" y="55" width="13" height="5" rx="1"/>
+    </g>
+    <g fill="none" stroke="rgba(224,112,32,0.07)" stroke-width="3" stroke-linecap="round">
+      <line x1="9" y1="9" x2="19" y2="26"/>
+      <line x1="35" y1="9" x2="25" y2="26"/>
+      <line x1="9" y1="51" x2="19" y2="34"/>
+      <line x1="35" y1="51" x2="25" y2="34"/>
+    </g>
+    <!-- Lit: f, b, g1, g2, e, c -->
+    <g fill="#E07020" filter="url(#glow)">
+      <rect x="0" y="7" width="5" height="19" rx="1"/>
+      <rect x="39" y="7" width="5" height="19" rx="1"/>
+      <rect x="7" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="24" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="0" y="34" width="5" height="19" rx="1"/>
+      <rect x="39" y="34" width="5" height="19" rx="1"/>
+    </g>
+  </g>
+
+  <!-- ===== C ===== -->
+  <g transform="translate(120,28)">
+    <g fill="rgba(224,112,32,0.07)">
+      <rect x="7" y="0" width="13" height="5" rx="1"/>
+      <rect x="24" y="0" width="13" height="5" rx="1"/>
+      <rect x="0" y="7" width="5" height="19" rx="1"/>
+      <rect x="39" y="7" width="5" height="19" rx="1"/>
+      <rect x="19.5" y="7" width="5" height="19" rx="1"/>
+      <rect x="7" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="24" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="0" y="34" width="5" height="19" rx="1"/>
+      <rect x="39" y="34" width="5" height="19" rx="1"/>
+      <rect x="19.5" y="34" width="5" height="19" rx="1"/>
+      <rect x="7" y="55" width="13" height="5" rx="1"/>
+      <rect x="24" y="55" width="13" height="5" rx="1"/>
+    </g>
+    <g fill="none" stroke="rgba(224,112,32,0.07)" stroke-width="3" stroke-linecap="round">
+      <line x1="9" y1="9" x2="19" y2="26"/>
+      <line x1="35" y1="9" x2="25" y2="26"/>
+      <line x1="9" y1="51" x2="19" y2="34"/>
+      <line x1="35" y1="51" x2="25" y2="34"/>
+    </g>
+    <!-- Lit: a1, a2, f, e, d1, d2 -->
+    <g fill="#E07020" filter="url(#glow)">
+      <rect x="7" y="0" width="13" height="5" rx="1"/>
+      <rect x="24" y="0" width="13" height="5" rx="1"/>
+      <rect x="0" y="7" width="5" height="19" rx="1"/>
+      <rect x="0" y="34" width="5" height="19" rx="1"/>
+      <rect x="7" y="55" width="13" height="5" rx="1"/>
+      <rect x="24" y="55" width="13" height="5" rx="1"/>
+    </g>
+  </g>
+
+  <!-- ===== C (bottom-left) ===== -->
+  <g transform="translate(36,112)">
+    <g fill="rgba(224,112,32,0.07)">
+      <rect x="7" y="0" width="13" height="5" rx="1"/>
+      <rect x="24" y="0" width="13" height="5" rx="1"/>
+      <rect x="0" y="7" width="5" height="19" rx="1"/>
+      <rect x="39" y="7" width="5" height="19" rx="1"/>
+      <rect x="19.5" y="7" width="5" height="19" rx="1"/>
+      <rect x="7" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="24" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="0" y="34" width="5" height="19" rx="1"/>
+      <rect x="39" y="34" width="5" height="19" rx="1"/>
+      <rect x="19.5" y="34" width="5" height="19" rx="1"/>
+      <rect x="7" y="55" width="13" height="5" rx="1"/>
+      <rect x="24" y="55" width="13" height="5" rx="1"/>
+    </g>
+    <g fill="none" stroke="rgba(224,112,32,0.07)" stroke-width="3" stroke-linecap="round">
+      <line x1="9" y1="9" x2="19" y2="26"/>
+      <line x1="35" y1="9" x2="25" y2="26"/>
+      <line x1="9" y1="51" x2="19" y2="34"/>
+      <line x1="35" y1="51" x2="25" y2="34"/>
+    </g>
+    <!-- Lit: a1, a2, f, e, d1, d2 -->
+    <g fill="#E07020" filter="url(#glow)">
+      <rect x="7" y="0" width="13" height="5" rx="1"/>
+      <rect x="24" y="0" width="13" height="5" rx="1"/>
+      <rect x="0" y="7" width="5" height="19" rx="1"/>
+      <rect x="0" y="34" width="5" height="19" rx="1"/>
+      <rect x="7" y="55" width="13" height="5" rx="1"/>
+      <rect x="24" y="55" width="13" height="5" rx="1"/>
+    </g>
+  </g>
+
+  <!-- ===== Q ===== -->
+  <g transform="translate(120,112)">
+    <g fill="rgba(224,112,32,0.07)">
+      <rect x="7" y="0" width="13" height="5" rx="1"/>
+      <rect x="24" y="0" width="13" height="5" rx="1"/>
+      <rect x="0" y="7" width="5" height="19" rx="1"/>
+      <rect x="39" y="7" width="5" height="19" rx="1"/>
+      <rect x="19.5" y="7" width="5" height="19" rx="1"/>
+      <rect x="7" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="24" y="27.5" width="13" height="5" rx="1"/>
+      <rect x="0" y="34" width="5" height="19" rx="1"/>
+      <rect x="39" y="34" width="5" height="19" rx="1"/>
+      <rect x="19.5" y="34" width="5" height="19" rx="1"/>
+      <rect x="7" y="55" width="13" height="5" rx="1"/>
+      <rect x="24" y="55" width="13" height="5" rx="1"/>
+    </g>
+    <g fill="none" stroke="rgba(224,112,32,0.07)" stroke-width="3" stroke-linecap="round">
+      <line x1="9" y1="9" x2="19" y2="26"/>
+      <line x1="35" y1="9" x2="25" y2="26"/>
+      <line x1="9" y1="51" x2="19" y2="34"/>
+      <line x1="35" y1="51" x2="25" y2="34"/>
+    </g>
+    <!-- Lit: a1, a2, f, b, e, c, d1, d2 (O shape) + m diagonal (Q tail) -->
+    <g fill="#E07020" filter="url(#glow)">
+      <rect x="7" y="0" width="13" height="5" rx="1"/>
+      <rect x="24" y="0" width="13" height="5" rx="1"/>
+      <rect x="0" y="7" width="5" height="19" rx="1"/>
+      <rect x="39" y="7" width="5" height="19" rx="1"/>
+      <rect x="0" y="34" width="5" height="19" rx="1"/>
+      <rect x="39" y="34" width="5" height="19" rx="1"/>
+      <rect x="7" y="55" width="13" height="5" rx="1"/>
+      <rect x="24" y="55" width="13" height="5" rx="1"/>
+    </g>
+    <!-- Lit: m (lower-right diagonal for Q tail) -->
+    <g fill="none" stroke="#E07020" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+      <line x1="35" y1="51" x2="25" y2="34"/>
+    </g>
+  </g>
+</svg>
